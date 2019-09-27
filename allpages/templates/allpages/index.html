@@ -1,0 +1,49 @@
+{% extends "allpages/base.html" %}
+
+{% block headcontent %}
+<!-- As always, the style rules below can go in an external style sheet, here just for working example -->
+<style>
+    nav.button-links {
+        position: static;
+        text-align:left;
+    }
+
+    nav.button-links h2 {
+        position: static;
+        display: inline-block;
+    }
+    nav.button-links a {
+        display: inline-block;
+        background-color: #007bff;
+        color: #fff;
+        border: solid 1px gray;
+        text-align: center;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: .25rem;
+        transition: background-color .25s ease-in-out, color .25s ease-in-out;
+    }
+    
+    nav.button-links a:hover {
+        background-color: #0DFFFC;
+        color: navy;
+    }
+
+</style>
+{% endblock headcontent %}
+
+{% block maincontent %}
+<h1>Site Home Page</h1>
+<p>This is the site home page from allpages/templates/allpages/index.html.</p>
+<nav class="button-links">
+    <h2>Video Links</h2>
+    <a href="{% url 'videos-thumbs' 1 %}">HTML / CSS</a>
+    <a href="{% url 'videos-thumbs' 2 %}">JavaScript</a>
+    <a href="{% url 'videos-thumbs' 3 %}">Python</a>
+    <a href="{% url 'videos-thumbs' 4 %}">Django</a>
+    {% if request.user.is_superuser %}
+        <a href="{% url 'videos-list' %}">Video List</a>
+    {% endif %}
+</nav>
+{% endblock maincontent %}

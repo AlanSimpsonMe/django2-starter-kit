@@ -1,0 +1,47 @@
+{% extends "allpages/base.html" %}
+{% load static %}
+{% block headcontent %}
+<!-- All of these style rules can go into an external style sheet.-->
+<!-- Made them internal here so they'd be easy to find. -->
+<style>
+    iframe {
+        display: block;
+        width: 80%;
+        margin: 1em auto;
+        height: calc(.5625 * 80vw);
+        min-width: 320px;
+        /* min height is .5625 times min width */
+        min-height: 180px;
+        max-width: 1024px;
+        /* max height is .5625 times max width */
+        max-height: 576px;
+    }
+
+    /* Adjust h1 font size to screen width */
+    h1 {
+        font-size: 3vw;
+    }
+
+    /* Reduce side margins on narrow screens */
+    @media screen and (max-width:800px) {
+        main {
+            margin: 68px 0 48px 0;
+        }
+
+        iframe {
+            width: 96%;
+        }
+    }
+</style>
+
+{% endblock headcontent %}
+
+
+{% block maincontent %}
+<h1>{{ video.title }}</h1>
+<!-- Standard YouTube embed, with width= and height= removed. -->
+<iframe src="https://www.youtube.com/embed/{{ video.youtube_vid }}" frameborder="0" allow="autoplay; encrypted-media"
+    allowfullscreen></iframe>
+
+
+{% endblock maincontent %}

@@ -1,0 +1,50 @@
+name: django2
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - astroid=2.2.5=py37_0
+  - autopep8=1.4.4=py_0
+  - ca-certificates=2019.6.16=hecc5488_0
+  - certifi=2019.6.16=py37_1
+  - django=2.2.5=py37_0
+  - django-bootstrap4=1.0.1=py_0
+  - django-crispy-forms=1.7.0=py_1
+  - freetype=2.10.0=h24853df_1
+  - furl=2.0.0=py37_0
+  - isort=4.3.21=py37_0
+  - jinja2=2.10.1=py_0
+  - jpeg=9c=h1de35cc_1001
+  - lazy-object-proxy=1.4.2=py37h01d97ff_0
+  - libcxx=4.0.1=hcfea43d_1
+  - libcxxabi=4.0.1=hcfea43d_1
+  - libedit=3.1.20181209=hb402a30_0
+  - libffi=3.2.1=h475c297_4
+  - libpng=1.6.37=h2573ce8_0
+  - libtiff=4.0.10=hd08fb8f_1003
+  - lz4-c=1.8.3=h6de7cb9_1001
+  - markupsafe=1.1.1=py37h1de35cc_0
+  - mccabe=0.6.1=py_1
+  - ncurses=6.1=h0a44026_1
+  - olefile=0.46=py_0
+  - openssl=1.1.1c=h01d97ff_0
+  - orderedmultidict=1.0.1=py_0
+  - pillow=6.1.0=py37hb68e598_0
+  - pip=19.2.2=py37_0
+  - pycodestyle=2.5.0=py_0
+  - pylint=2.3.1=py37_0
+  - python=3.7.4=h359304d_1
+  - pytz=2019.2=py_0
+  - readline=7.0=h1de35cc_5
+  - setuptools=41.0.1=py37_0
+  - six=1.12.0=py37_1000
+  - sqlite=3.29.0=ha441bb4_0
+  - sqlparse=0.3.0=py_0
+  - tk=8.6.8=ha441bb4_0
+  - wheel=0.33.4=py37_0
+  - wrapt=1.11.2=py37h01d97ff_0
+  - xz=5.2.4=h1de35cc_4
+  - zlib=1.2.11=h1de35cc_3
+  - zstd=1.4.0=ha9f0a20_0
+prefix: /Users/alan/anaconda3/envs/django2
+

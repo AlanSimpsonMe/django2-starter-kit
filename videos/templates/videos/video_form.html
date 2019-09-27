@@ -1,0 +1,56 @@
+{% extends "allpages/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block headcontent %}
+<style>
+    .asteriskField {
+        display: none;
+    }
+
+    .form-control-label {
+        margin: 0;
+    }
+
+    #the-form {
+        width: 98%;
+        max-width: 640px;
+        margin: 0 auto;
+        border: solid 1px silver;
+        border-radius: 4px;
+        padding: 1%;
+    }
+    #id_description{
+        height:100px;
+    }
+    #id_category_id,
+    #id_skill_level_id{
+        width: 120px;
+    }
+</style>
+
+{% endblock headcontent %}
+
+{% block maincontent %}
+<div id="the-form">
+    <h1>
+        {% if form.instance.pk %}
+        Edit Video
+        {% else %}
+        Add a Video
+        {% endif %}
+    </h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <p style="text-align:center">
+            {% if form.instance.pk  %}
+                <input type="submit" value="Update"><br>
+                <a href="{% url 'videos-delete' video.id %}" style="color:red">Delete Permanently</a>
+            {% else %}
+                <input type="submit" value="Create">&nbsp;&nbsp;
+                <input type="reset" value="Reset">
+            {% endif %}
+        </p>
+    </form>
+</div>
+{% endblock maincontent %}

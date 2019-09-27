@@ -1,0 +1,115 @@
+{
+    "beautify.language": {
+        "js": {
+            "type": [
+                "javascript",
+                "json"
+            ],
+            "filename": [
+                ".jshintrc",
+                ".jsbeautifyrc"
+            ]
+            // "ext": ["js", "json"]
+            // ^^ to set extensions to be beautified using the javascript beautifier
+        },
+        "css": [
+            "css",
+            "scss"
+        ],
+        "html": [
+            "htm",
+            "html",
+            "django-html"
+        ]
+    },
+"breadcrumbs.enabled": true,
+"editor.detectIndentation": false,
+"editor.fontFamily": "'Source Code Pro', 'Courier New', 'Courier', Consolas, 'Courier New', monospace",
+"editor.fontSize": 14,
+"editor.letterSpacing": 1,
+"editor.minimap.enabled": false,
+"emmet.includeLanguages": {
+    "django-html": "html"
+},
+"emmet.triggerExpansionOnTab": true,
+"files.associations": {
+    "**/templates/*.html": "django-html",
+    "**/templates/*": "django-txt",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+},
+"files.autoSave": "afterDelay",
+"files.exclude": {
+    "**/.vscode": true
+},
+"git.enabled": false,
+"[html]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+},
+"python.pythonPath": "C:\\Users\\acsimpson\\AppData\\Local\\Continuum\\anaconda3\\envs\\django224",
+"python.linting.enabled": false,
+"[python]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+},
+"terminal.integrated.cursorBlinking": true,
+"terminal.integrated.cursorStyle": "underline",
+"terminal.integrated.fontFamily": "'Overpass Mono', 'Courier New', Courier, monospace",
+"terminal.integrated.fontSize": 14,
+"terminal.integrated.letterSpacing": 1,
+"window.zoomLevel": 0,
+"workbench.colorTheme": "Material Theme",
+"workbench.iconTheme": "material-icon-theme",
+"workbench.colorCustomizations": {
+    "breadcrumb.background": "#263238",
+    "breadcrumb.foreground": "#aaa",
+    "editor.background": "#000",
+    "editorLineNumber.foreground": "#aaa",
+    "editorLineNumber.activeForeground": "#ffff00",
+    "editor.selectionBackground": "#aaaaaa80",
+    "sideBar.background": "#1e1e1e",
+    "sideBar.foreground": "#ddd",
+    "sidebar.fontsize": 22,
+    "terminal.background": "#000",
+    "terminal.foreground": "#fff",
+},
+"editor.tokenColorCustomizations": {
+    "comments": "#999",
+    "textMateRules": [
+        {
+            "name": "tags",
+            "scope": [
+                "entity",
+                "entity.name.tag"
+            ],
+            "settings": {
+                "foreground": "#D95BA1",
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "attributes",
+            "scope": [
+                "entity",
+                "text.html.basic entity.other.attribute-name.html"
+            ],
+            "settings": {
+                "foreground": "#f78c6c",
+                "fontStyle": ""
+            }
+        },
+        {
+            "name": "no_italics",
+            "scope": [
+                "entity",
+                "keyword.control.import.python",
+                "keyword.control.flow.python",
+                "keyword.control.jinja",
+            ],
+            "settings": {
+                "fontStyle": ""
+            }
+        },
+    ]
+},
+
+}

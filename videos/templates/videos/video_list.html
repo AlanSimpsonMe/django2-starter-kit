@@ -1,0 +1,106 @@
+{% extends "allpages/base.html" %}
+{% load static %}
+{% block headcontent %}
+<!-- All of these style rules can go into an external style sheet.-->
+<!-- Made them internal here so they'd be easy to find. -->
+<style>
+    table.videos {
+        border-collapse: collapse;
+        margin: 1em auto;
+    }
+
+    table.videos th,
+    table.videos td {
+        border: solid 1px silver;
+        padding: 0 4px;
+    }
+
+    table.videos td:nth-child(1) {
+        text-align: center;
+    }
+
+    table.videos td:nth-child(2) {
+        max-width: 650px;
+    }
+
+    table.videos td:nth-child(3) {
+        max-width: 300px;
+    }
+
+    table.videos td:nth-child(4) {
+        width: 100px;
+        position: relative;
+    }
+
+    table.videos td:nth-child(4) div {
+        background-color: gold;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 18px;
+        z-index: 100;
+    }
+
+    table.videos td:nth-child(4) img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 110;
+    }
+
+    table.videos tr:hover {
+        cursor: pointer;
+    }
+
+    table.videos tr:nth-child(even) {
+        background-color: aliceblue;
+    }
+
+    table.videos tr:hover {
+        background-color: yellow;
+    }
+</style>
+
+{% endblock headcontent %}
+
+
+{% block maincontent %}
+<h1>Videos</h1>
+<p>Click any row's edit icon to edit that video, or <a href="{% url 'videos-create' %}">click here to add a new
+        video</a>.</p>
+<table class="videos">
+    <tr>
+        <th>
+            Edit
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            Author
+        </th>
+        <th>
+            Rating
+        </th>
+    </tr>
+    {% for video in object_list %}
+    <tr>
+        <td>
+            <a href="{% url 'videos-update' video.id %}" class="fa fa-edit"></a>
+        </td>
+        <td style="text-decoration:{% if video.is_active %}none{% else %}line-through{% endif %}">
+            {{ video.title }}
+        </td>
+        <td>
+            {{ video.author }}
+        </td>
+        <td>
+            <div style="width: calc(20% * {{ video.stars_count }})"></div>
+            <img src="{% static 'allpages/images/stars.png' %}" alt="{{ video.stars_count }}"
+                title="{{ video.stars_count }}">
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock maincontent %}
